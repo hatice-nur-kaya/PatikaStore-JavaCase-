@@ -1,0 +1,2 @@
+# PatikaStore(JavaCase)
+ Java Case
