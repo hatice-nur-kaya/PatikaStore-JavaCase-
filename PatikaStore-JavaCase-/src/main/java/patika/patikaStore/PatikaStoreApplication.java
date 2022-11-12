@@ -18,7 +18,7 @@ public class PatikaStoreApplication {
 		System.out.println("1 - Notebook İşlemleri");
 		System.out.println("2 - Cep Telefonu İşlemleri");
 		System.out.println("3 - Marka Listele");
-		System.out.println("Çıkış Yap");
+		System.out.println("Çıkış Yap");   
 
 
 
