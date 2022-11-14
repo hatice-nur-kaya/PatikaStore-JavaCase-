@@ -1,13 +1,14 @@
 package patika.patikaStore.business.abstracts;
 
 import java.util.List;
-
 import patika.patikaStore.entities.Product;
+import patika.patikaStore.entities.models.ApiResponse;
 
 public interface ProductService {
-    List<Product> getAll();
-    Product getById(int id);
-    void add(Product product);
-    void update (Product product,int id);
-    void remove(int id);
+    ApiResponse<List<Product>> getAllProduct();
+    ApiResponse<Product> getOneProduct(int id);
+    ApiResponse<Product> postOneProduct(Product product);
+    ApiResponse<Product> putOneProduct(int id, Product product);
+    void deleteProduct(int id);
+
 }

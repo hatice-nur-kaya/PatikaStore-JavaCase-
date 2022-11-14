@@ -12,13 +12,5 @@ import patika.patikaStore.business.abstracts.BrandService;
 @RequestMapping("api/v1/brands")
 @RequiredArgsConstructor
 public class BrandController {
-    private final BrandService brandService;
- 
-    @GetMapping
-    public ResponseEntity<?> getAllBrand(){
-        return ResponseEntity
-        .status(HttpStatus.OK)
-        .body(brandService.getAll());
-    }
-    
+
 }
