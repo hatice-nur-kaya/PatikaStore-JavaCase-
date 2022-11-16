@@ -30,11 +30,11 @@ public class BrandManager implements BrandService {
         brands.add(new Brand(7,"HP"));
         brands.add(new Brand(8,"Xiaomi"));
         brands.add(new Brand(9,"Monster"));
-        brands.sort(Comparator.comparing(Brand::getName).reversed());
+        Collections.sort(brands, Comparator.comparing(Brand::getName));        
         System.out.println("Markalarımız :");
         System.out.println("----------------");
         for(Brand brand:brands)  {
-        System.out.println(brand);  
+        System.out.println(brand.getName());  
         }   
         return brands;
      }  

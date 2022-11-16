@@ -8,9 +8,7 @@ public class PatikaStoreApplication {
 
 	public static void main(String[] args) {
 		StoreManager storeManager = new StoreManager();
-	    BrandManager brandManager = new BrandManager(null);
 		storeManager.menu();
-		brandManager.getAllBrands();
 
 	}
 
