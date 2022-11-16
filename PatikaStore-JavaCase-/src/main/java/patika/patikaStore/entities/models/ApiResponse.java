@@ -1,6 +1,8 @@
 package patika.patikaStore.entities.models;
 
 import java.sql.Timestamp;
+import java.util.Collection;
+
 import org.springframework.http.HttpStatus;
 
 import lombok.AllArgsConstructor;

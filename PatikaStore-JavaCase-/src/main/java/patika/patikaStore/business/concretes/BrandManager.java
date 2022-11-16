@@ -2,18 +2,13 @@ package patika.patikaStore.business.concretes;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.Comparator;
 
+import org.aspectj.weaver.reflect.ArgNameFinder;
 import org.springframework.stereotype.Service;
 import patika.patikaStore.business.abstracts.BrandService;
 import patika.patikaStore.dataAccess.abstracts.BrandDao;
 import patika.patikaStore.entities.Brand;
-import patika.patikaStore.entities.models.ApiResponse;
 
 @Service
 public class BrandManager implements BrandService {
@@ -22,10 +17,28 @@ public class BrandManager implements BrandService {
     public BrandManager(BrandDao brandDao) {
         this.brandDao = brandDao;
     }
+    
     @Override
-    public ApiResponse<List<Brand>> getAllBrands() {
-        List<Brand> allBrands = brandDao.findAll();
-        return ApiResponse.default_OK(allBrands);
+    public ArrayList<Brand> getAllBrands() {
+        ArrayList<Brand> brands= new  ArrayList<Brand>();
+        brands.add(new Brand(1,"Samsung"));
+        brands.add(new Brand(2,"Lenovo"));
+        brands.add(new Brand(3,"Apple"));
+        brands.add(new Brand(4,"Huawei"));
+        brands.add(new Brand(5,"Casper"));
+        brands.add(new Brand(6,"Asus"));
+        brands.add(new Brand(7,"HP"));
+        brands.add(new Brand(8,"Xiaomi"));
+        brands.add(new Brand(9,"Monster"));
+        brands.sort(Comparator.comparing(Brand::getName).reversed());
+        System.out.println("Markalarımız :");
+        System.out.println("----------------");
+        for(Brand brand:brands)  {
+        System.out.println(brand);  
+        }   
+        return brands;
+     }  
     }
+    
 
-}
+

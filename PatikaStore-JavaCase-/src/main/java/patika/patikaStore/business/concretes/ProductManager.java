@@ -1,11 +1,14 @@
 package patika.patikaStore.business.concretes;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import patika.patikaStore.business.abstracts.ProductService;
 import patika.patikaStore.dataAccess.abstracts.ProductDao;
 import patika.patikaStore.entities.Product;
 import patika.patikaStore.entities.models.ApiResponse;
 
+@Service
 public class ProductManager implements ProductService  {
 
     private final ProductDao productDao;
