@@ -106,15 +106,15 @@ public class StoreManager implements StoreServices {
                 System.exit(0);
                 break;
             case 1:
-            PhoneManager phoneManager = new PhoneManager();
+            PhoneManager phoneManager = new PhoneManager(null);
             phoneManager.getAllPhone();
                 break;
             case 2:
-            PhoneManager phoneManager2 = new PhoneManager();
+            PhoneManager phoneManager2 = new PhoneManager(null);
             phoneManager2.getAllPhone();
                 break;
             case 3:
-            PhoneManager phoneManager3 = new PhoneManager();
+            PhoneManager phoneManager3 = new PhoneManager(null);
             System.out.print("Silmek İstediğiniz Ürün Id: ");
             n = scan.nextInt();
             phoneManager3.deletePhone(n);

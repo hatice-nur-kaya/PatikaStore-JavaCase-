@@ -3,11 +3,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import patika.patikaStore.business.abstracts.PhoneServices;
+import patika.patikaStore.dataAccess.abstracts.PhoneDao;
 import patika.patikaStore.entities.Phone;
 import patika.patikaStore.entities.models.ApiResponse;
 
 public class PhoneManager implements PhoneServices {
-
+    private final PhoneDao phoneDao;
+    public PhoneManager(PhoneDao phoneDao) {
+        this.phoneDao = phoneDao;
+    }
     @Override
     public ArrayList<Phone> getAllPhone() {
         ArrayList<Phone> phones = new ArrayList<>();
@@ -20,24 +24,23 @@ public class PhoneManager implements PhoneServices {
     }
 
     @Override
-    public ArrayList<Phone> getOnePhone(int id) {
-        // TODO Auto-generated method stub
-        return null;
+    public ApiResponse<Phone> getOnePhone(int id) {
+        Phone phone = phoneDao
+        .findById(id).get();
+        return ApiResponse.default_OK(phone);
     }
 
     @Override
-    public ArrayList<Phone> postOnePhone(Phone phone) {
-        ArrayList<Phone> phones = new ArrayList<>();
-        phones.add(new Phone(phone.getId(),phone.getName(),phone.getMemory(),phone.getScreenSize(),phone.getBattery(),phone.getRam(),phone.getColor()));
-        for(Phone phone2:phones)  {
-            System.out.format(phone2.getName(),phone.getMemory(),phone.getScreenSize(),phone.getBattery(),phone.getRam());  
-         }   
-         return phones;
+    public ApiResponse<Phone> postOnePhone(Phone phone) {
+        Phone data = phoneDao.save(phone);
+        return ApiResponse.default_CREATED(data);
     }
 
     @Override
     public void deletePhone(int id) {
-        // TODO Auto-generated method stub
+        getOnePhone(id);
+        phoneDao.deleteById(id);
+        return; 
         
     }
 
