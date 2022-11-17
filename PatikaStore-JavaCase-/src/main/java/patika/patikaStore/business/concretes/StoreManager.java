@@ -33,7 +33,7 @@ public class StoreManager implements StoreServices {
                 phonemenu();
                 break;
             case 3:
-                BrandManager brandManager = new BrandManager(null);
+                BrandManager brandManager = new BrandManager();
                 brandManager.getAllBrands();
                 break;
             case 4:
@@ -65,13 +65,17 @@ public class StoreManager implements StoreServices {
                 System.exit(0);
                 break;
             case 1:
-
+            NotebooksManager notebooksManager = new NotebooksManager();
+            notebooksManager.getAllNotebooks();
                 break;
             case 2:
                 break;
             case 3:
-                BrandManager brandManager = new BrandManager(null);
-                brandManager.getAllBrands();
+                NotebooksManager notebooksManager2 = new NotebooksManager();
+                Scanner scanner =new Scanner(System.in);
+                System.out.print("Silmek İstediğiniz Ürün Id: ");
+                n = scan.nextInt();
+                notebooksManager2.deleteNotebooks(n);
                 break;
             case 4:
                 break;
@@ -102,18 +106,18 @@ public class StoreManager implements StoreServices {
                 System.exit(0);
                 break;
             case 1:
-            ProductManager productManager = new ProductManager(null);
-            System.out.format("%10s%15s%15s%15s%20s",
-            "Grade", "Last Name", "First Name", "Student Number", "Parent Email");
-            productManager.getAllProduct();
+            PhoneManager phoneManager = new PhoneManager();
+            phoneManager.getAllPhone();
                 break;
             case 2:
-            ProductManager productManager2 = new ProductManager(null);
-            productManager2.postOneProduct(null);
+            PhoneManager phoneManager2 = new PhoneManager();
+            phoneManager2.getAllPhone();
                 break;
             case 3:
-            ProductManager productManager3 = new ProductManager(null);
-            productManager3.deleteProduct(n);
+            PhoneManager phoneManager3 = new PhoneManager();
+            System.out.print("Silmek İstediğiniz Ürün Id: ");
+            n = scan.nextInt();
+            phoneManager3.deletePhone(n);
                 break;
             case 4:
                 break;

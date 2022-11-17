@@ -12,12 +12,7 @@ import patika.patikaStore.entities.Brand;
 
 @Service
 public class BrandManager implements BrandService {
-    private final BrandDao brandDao;
-
-    public BrandManager(BrandDao brandDao) {
-        this.brandDao = brandDao;
-    }
-    
+  
     @Override
     public ArrayList<Brand> getAllBrands() {
         ArrayList<Brand> brands= new  ArrayList<Brand>();
